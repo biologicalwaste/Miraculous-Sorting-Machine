@@ -13,7 +13,7 @@ fn main() {
 fn generate_rndarray() -> [i8; 64] {
     let mut a: [i8; 64] = [0; 64];
     for i in 0..63 {
-        // let mut a: [i8; 64] = [0; 64];
+        a[i] = i as i8 + 1;
     }
 
     return a;
