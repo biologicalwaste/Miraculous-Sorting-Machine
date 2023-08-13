@@ -7,14 +7,10 @@ fn main() {
 
     let sorted_array = sort::sort_simple(rnd_array);
 
-    //Testing; print the whole array
-    for i in 0..64 {
-        let current_display = rnd_array[i];
-        println!("{current_display}")
-    }
-
     //Testing: print the array without a "for" loop?
-    println!("Array is {:?}", rnd_array)
+    println!("Array is {:?}", rnd_array);
+
+    println!("Sorted array is {:?}", sorted_array);
 }
 
 fn generate_rndarray() -> [i8; 64] {
