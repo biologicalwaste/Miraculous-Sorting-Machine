@@ -9,33 +9,37 @@ pub fn sort_simple(mut a: [i8; 64]) -> [i8; 64] {
             let current_first;
             let current_second;
 
+            // get the first and second numbers to be sorted
             current_first = a[point];
+
+            // check if outside the range of the array
             if point == length {
-                current_second = 0;
                 break;
             }
 
             current_second = a[point + 1];
 
             match current_first.cmp(&current_second) {
-                //if the first value is greater than the second value, swap em
+                // if the first value is greater than the second value, swap em
                 Ordering::Greater => {
                     let current_first_prime = current_second;
                     let current_second_prime = current_first;
                     a[point] = current_first_prime;
                     a[point + 1] = current_second_prime;
+
+                    // increment the amount of operations performed
                     ops += 1;
                 }
                 Ordering::Less => {
                     continue;
                 }
-                Ordering::Equal => println!("Something has gone wrong! Check your code!"),
+                Ordering::Equal => {
+                    continue;
+                }
             }
-
-            // testing prints
-            // println!("The first number is {:?}! The second number is {:?}!", current_first, current_second);
         }
 
+        // Test if the array is sorted by looking at how many swaps it performed
         if ops == 0 {
             break;
         }

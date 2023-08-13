@@ -7,7 +7,6 @@ fn main() {
 
     let sorted_array = sort::sort_simple(rnd_array);
 
-    //Testing: print the array without a "for" loop?
     println!("Array is {:?}", rnd_array);
 
     println!("Sorted array is {:?}", sorted_array);
