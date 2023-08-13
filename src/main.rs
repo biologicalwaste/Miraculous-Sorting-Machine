@@ -1,11 +1,11 @@
 use rand::thread_rng;
-use rand::seq::*;
+use rand::seq::SliceRandom;
 mod sort;
 fn main() {
     // Init the array and generate a random sequence to fill it
     let rnd_array = generate_rndarray();
 
-    let sorted_array = sort::sort_simple(rnd_array);
+    let sorted_array = sort::bogo_sort(rnd_array);
 
     println!("Array is {:?}", rnd_array);
 
